@@ -15,6 +15,43 @@
 
     <title>Carmen Podgurschi's Portfolio Page</title>
 
+<style>
+    /* For mobile phones: */
+    [class*="col-"] {
+      width: 100%;
+    }
+    
+    @media only screen and (min-width: 600px) {
+      /* For tablets: */
+      .col-s-1 {width: 8.33%;}
+      .col-s-2 {width: 16.66%;}
+      .col-s-3 {width: 25%;}
+      .col-s-4 {width: 33.33%;}
+      .col-s-5 {width: 41.66%;}
+      .col-s-6 {width: 50%;}
+      .col-s-7 {width: 58.33%;}
+      .col-s-8 {width: 66.66%;}
+      .col-s-9 {width: 75%;}
+      .col-s-10 {width: 83.33%;}
+      .col-s-11 {width: 91.66%;}
+      .col-s-12 {width: 100%;}
+    }
+    @media only screen and (min-width: 768px) {
+      /* For desktop: */
+      .col-1 {width: 8.33%;}
+      .col-2 {width: 16.66%;}
+      .col-3 {width: 25%;}
+      .col-4 {width: 33.33%;}
+      .col-5 {width: 41.66%;}
+      .col-6 {width: 50%;}
+      .col-7 {width: 58.33%;}
+      .col-8 {width: 66.66%;}
+      .col-9 {width: 75%;}
+      .col-10 {width: 83.33%;}
+      .col-11 {width: 91.66%;}
+      .col-12 {width: 100%;}
+    }
+</style>
 </head>
 
 <body>
@@ -42,11 +79,11 @@
                 <a class="nav-link dropdown-toggle" href="#projects" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Projects
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#projects">Project One</a></li>
-                  <li><a class="dropdown-item" href="#projects">Project Two</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#projects  ">Project Three</a></li>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="myUL">
+                  <li><a class="dropdown-item" href="#projects">Pacman</a></li>
+                  <li><a class="dropdown-item" href="#projects">Eyes</a></li>
+                  <!-- <li><hr class="dropdown-divider"></li> -->
+                  <li><a class="dropdown-item" href="#projects">Real time bus tracker</a></li>
                 </ul>
               </li>
                 <!-- <li class="nav-item">
@@ -54,12 +91,32 @@
                 </li> -->
             </ul>
             <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <input class="form-control me-2" type="search" placeholder="Search for project" aria-label="Search" title="Type in a name" id="myInput" onkeyup="myFunction()">
               <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
           </div>
         </div>
       </nav>
+      <!-- <style> nav {position: fixed; top: 0;} </style>  -->
+
+      <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+        </script>
 
     <div class="container">
 
@@ -67,6 +124,7 @@
             <div class="col-lg text-center">
                 <p></p>
                 <h1>Hi, I'm Carmen Podgurschi! </h1>
+                <a name="home"></a>
             </div>
         </div>
 
@@ -91,17 +149,12 @@
         <div class="row">
             <div class="col-sm text-center">
                 <hr>
-
-                <!-- Author of <a href=https://memorablepython target="_blank"> Memorable Python</a>, 
-                <a href=https://memorablepandas target="_blank"> Memorable Pandas</a> 
-                <a href=https://memorablesql target="_blank"> Memorable SQL</a>,
-                and <a href=https://memorabledocker target="_blank">Memorable Docker </a> <br> -->
                 Product Manager in Financial Services <br>
                 Full Stack Development with MERN @MIT xPRO Student <br>
                 Thought Leader and Evangelist at Financial Industry Events 
-                </div>
+            </div>
         </div>
-    </section>
+        </section>
 
         <!-- Contact Section -->
         <section id="contact" class="content-section text-center">
@@ -109,16 +162,16 @@
                 <div class="col-sm"></div>
                 <div class="col-sm text-center">
                     <hr>
-    
-                    <h2>Let's Connect!</h2>
+                    <a name="letsconnect"></a>
+                    <h2>Let's Connect!</h2> 
                     <p> </p> 
                     <p> </p> 
                     <a href="https://www.linkedin.com/in/carmen-podgurschi-75a466/"> LinkedIn</a> - <a href="https://github.com/cpodgurschi">GitHub</a>
-                    - <a href="mailto:cpodgurschi@gmail.com?subject=Inquiry from Portfolio">Email</a>
+                    - <a href="mailto:cpodgurschi@gmail.com?subject=Inquiry from Portfolio" name="email">Email</a>
                     <p> </p> 
                 </div>
                 <div class="col-sm"></div>
-            </div>  
+            </div>
             <hr>
             <div class="row">
 
@@ -128,8 +181,7 @@
                     </p>
                 </div>
             </div>
-            
-            </section>
+        </section>
             
 
         <!-- Projects Section -->
@@ -144,62 +196,66 @@
         <div class="row">
         <hr>
         <div class="col-sm text-center">
-           <a href="https://memorablepython.com">
-           <img src="assets/images/finalcover.png" class="img-fluid w-50 p-3 border" alt="Memorable Python Cover"> </img> </a>
+            <a href="https://github.com/cpodgurschi/pacmanfactory#readme">
+                <p> PacMan Factory Instructions </p>
+            </a>
+            <a href="https://cpodgurschi.github.io/pacmanfactory/">
+                <img src="PacMan1.png" class="img-fluid w-50 p-3 border" alt="PacMan Factory"> </img> 
+                <p> Click to Play </p>
+            </a>
+            <a href="#letsconnect">I have a question</a>         
+        </div>
+
+        <div class="col-sm text-center">
+            <a href="https://github.com/cpodgurschi/eyes#readme">
+                <p> Eyes Movement Instructions </p>
+            </a>
+            <a href="https://cpodgurschi.github.io/eyes/">
+                <img src="Eyes.png" class="img-fluid w-50 p-3 border" alt="Eyes"> </img> 
+                <p> Click to Play </p>
+            </a>
+            <a href="#letsconnect">I have a question</a>         
         </div>
         
         <div class="col-sm text-center">
-           <a href="https://memorablepandas.com">
-           <img src="assets/images/cover_mem_pandas.jpg" class="img-fluid w-50 p-3 border" alt="Memorable Pandas Cover"> </img> </a>
+            <a href="https://github.com/cpodgurschi/realtimebustracker/blob/main/README.md">
+                <p> Real Time Bus Tracker Instructions </p>
+            </a>
+            <a href="https://cpodgurschi.github.io/realtimebustracker/">
+                <img src="Real Time Bus Tracker.png" class="img-fluid w-50 p-3 border" alt="Real Time Bus Tracker"> </img> 
+                <p> Click to Play </p>
+            </a>
+            <a href="#letsconnect">I have a question</a>         
         </div>
 
-        <div class="col-sm text-center">
-           <a href="https://memorablesql.com">
-           <img src="assets/images/cover_mem_sql.jpg" class="img-fluid w-50 p-3 border" alt="Memorable SQL Cover"> </img> </a>
-        </div>
-
-        <div class="col-sm text-center">
-          <a href="https://memorabledocker.com">
-          <img src="assets/images/memdockyear.png" class="img-fluid w-50 p-3 border" alt="Memorable Docker Cover"> </img> </a>
-        </div>
-    </div>
+         </div>
+        </section>
                
-    <div class="row">
-    </section>
-
-        <div class="col-sm text-center">
-            <hr>
-            <h3> Fun Facts </h3>
+        <div class="row">
+    
+            <div class="col-sm text-center">
+                <hr>
+                <h3> Fun Facts </h3>
+            </div>
         </div>
-    </div>
 
-    <div class="row">
+        <div class="row">
         <div class="col-sm py-3 px-sm-5">
             <p>
                 In 2005, I led the launch of Home Depot credit cards online, creating first landing pages, leveraging SEO, aggregator placements and embedding it into the shopping cart, with 15+% CRT. <br>
             </p>
             <p>
-                My goal is to create empowering experiences for consumers and businesses to transform their payments, liquidity, and data-insights experiences, leveraging smart cash management and open banking.
+                I am a strategiest and builder who helps firms develop products and client experiences for domestic and global financial products. My goal is to create empowering experiences for consumers and businesses to transform their payments, liquidity, and data-insights experiences, leveraging smart cash management and open banking.
            
             </p>
             <p>
                 I'm based in New York City area and into traveling, hiking, reading, board games, and trying cuisines from all over the world.
-            </p>
-            <p>
-            </p>
+            </p> 
+            <a href="#letsconnect">Contact me</a> <br>
+            <a href="#home">Home</a>
+        </div>
         </div>
     </div>
-
-    <!-- <div class="row row-grey">
-        <div class="col-sm text-center py-3">
-            <h5>Let's Connect!</h5>
-            <p> </p>
-            <a href="https://www.linkedin.com/in/carmen-podgurschi-75a466/"> LinkedIn</a> -
-            <a href="https://github.com/cpodgurschi"> GitHub</a> -
-            <a href="mailto:cpodgurschi@gmail.com?subject=Inquiry from Portfolio">Email</a>
-            <p></p>
-        </div>
-    </div> -->
 
     <!-- Footer -->
         <footer>
