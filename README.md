@@ -1,7 +1,5 @@
 # My Portfolio
 
-<img src="icon2.jpg" width='100'>
-
 ## Task Description
 
 My task is to upload the below three projects, to start creating my portfolio:
