@@ -4,9 +4,9 @@
 
 My task is to upload the below three projects, to start creating my portfolio:
 
-## 1. PacMan Factory Repo: <a href="https://cpodgurschi.github.io/pacmanfactory/README.md/"> PacMan Factory </a>
-## 2. Eyes Movement Repo:<a href="https://cpodgurschi.github.io/eyes/README.md/"> Eyes Movement </a>
-## 3. Real Time Bus Tracker Repo:<a href="https://cpodgurschi.github.io/realtimebustracker/README.md/"> Real Time Bus Tracker </a>
+## 1. PacMan Factory Repo: <a href="https://github.com/cpodgurschi/pacmanfactory"> PacMan Factory </a>
+## 2. Eyes Movement Repo:<a href="https://cpodgurschi.github.io/eyes/"> Eyes Movement </a>
+## 3. Real Time Bus Tracker Repo:<a href="https://cpodgurschi.github.io/realtimebustracker"> Real Time Bus Tracker </a>
 
 ## Installation
 
